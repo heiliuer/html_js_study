@@ -1,0 +1,15 @@
+.li {cursor:default; padding:5px; border-radius:4px 4px 4px 4px;}
+.li:hover {background:#eee;color:#000;}
+.re { list-style-type:none;padding:0.2em; position:relative; top:-10px;}
+.col_bg {background:#FcFcFc;border:1px solid #d2d2d2;color:#444; font-size:15px;font-family:'ËÎÌו';border-radius:2px 2px 2px 2px;}
+.pointer_cursor { cursor:pointer;}
+.pad {padding:7px;}
+.sel {padding:5px;}
+a img {border:none;}
+.inline { display:inline}
+.fra_cat {color:#666; line-height:200%;}
+.fra_a { text-decoration:none;padding:5px;}
+.fra_a:hover { background:#e0e0e0;color:#000077;border-radius:2px 2px 2px 2px;}
+img:hover { -webkit-transform:rotate(5deg);-moz-transform: rotate(5deg); }
+.CNDate_p {color:#999;font-size:13px;font-weight:bold;position:absolute;right:10px;top:0px;}
+

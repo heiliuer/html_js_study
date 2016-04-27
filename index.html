@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="Shortcut Icon" href="favicon.ico"/>
+    <link rel="Bookmark" href="favicon.ico"/>
+    <link href="css/jquery_cs.css" rel="stylesheet"/>
+    <title>简搜索</title>
+</head>
+<body style="margin:0 auto; overflow:hidden;">
+<p class="CNDate_p">
+    <script src="js/2.js"></script>
+    <script src="js/1.js"></script>
+    <script>document.write(GetCNDate());</script>
+</p>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?uid=1394689518789461&move=0"
+        charset="utf-8"></script>
+
+<div align="center" style="margin-top:80px;"><a target="_blank" id="imgA"><img id="imgMe" height="120" src="img/1.jpg"/></a>
+</div>
+<div align="center" style="margin-top:40px;" id="form"><input
+        type="button" value="百度搜索" class="sel col_bg inline" id="category" style="z-index:2;"
+        onClick="showFragmentDiv(this);"/>
+    <input type="text" id='key' placeholder="请输入关键字" oninput="getSuggest(this.value);"
+           onpropertychange="getSuggest(this.value');" onBlur="hideSuggestLater()" onFocus="checkF(this.value);"
+           class="pad col_bg inline" size="50" maxlength="100" autocomplete="true"
+           style="width:auto !important;width:200px;min-width:50px;"/><input
+            type="button" value="搜索" class="sel col_bg inline" onClick="go()"/>
+</div>
+<div align="left" id="fragment" style="display:none;width:18em; margin-top:4px; vertical-align:middle;"
+     class="col_bg pad" ; onclick="showFragmentDiv(this);"></div>
+<script src="js/jquery.js"></script>
+<script src="js/3.js"></script>
+</body>
+</html>
