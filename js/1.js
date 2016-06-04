@@ -1,11 +1,11 @@
 var CalendarData = new Array(100);
 var madd = new Array(12);
-var tgString = "¼×ÒÒ±û¶¡Îì¼º¸ıĞÁÈÉ¹ï";
-var dzString = "×Ó³óÒúÃ®³½ËÈÎçÎ´ÉêÓÏĞçº¥";
-var numString = "Ò»¶şÈıËÄÎåÁùÆß°Ë¾ÅÊ®";
-var monString = "Õı¶şÈıËÄÎåÁùÆß°Ë¾ÅÊ®¶¬À°";
-var weekString = "ÈÕÒ»¶şÈıËÄÎåÁù";
-var sx = "ÊóÅ£»¢ÍÃÁúÉßÂíÑòºï¼¦¹·Öí";
+var tgString = "ç”²ä¹™ä¸™ä¸æˆŠå·±åºšè¾›å£¬ç™¸";
+var dzString = "å­ä¸‘å¯…å¯è¾°å·³åˆæœªç”³é…‰æˆŒäº¥";
+var numString = "ä¸€äºŒä¸‰å››äº”å…­ä¸ƒå…«ä¹å";
+var monString = "æ­£äºŒä¸‰å››äº”å…­ä¸ƒå…«ä¹åå†¬è…Š";
+var weekString = "æ—¥ä¸€äºŒä¸‰å››äº”å…­";
+var sx = "é¼ ç‰›è™å…”é¾™è›‡é©¬ç¾ŠçŒ´é¸¡ç‹—çŒª";
 var cYear, cMonth, cDay, TheDate;
 CalendarData = new Array(0xA4B, 0x5164B, 0x6A5, 0x6D4, 0x415B5, 0x2B6, 0x957, 0x2092F, 0x497, 0x60C96, 0xD4A, 0xEA5, 0x50DA9, 0x5AD, 0x2B6, 0x3126E, 0x92E, 0x7192D, 0xC95, 0xD4A, 0x61B4A, 0xB55, 0x56A, 0x4155B, 0x25D, 0x92D, 0x2192B, 0xA95, 0x71695, 0x6CA, 0xB55, 0x50AB5, 0x4DA, 0xA5B, 0x30A57, 0x52B, 0x8152A, 0xE95, 0x6AA, 0x615AA, 0xAB5, 0x4B6, 0x414AE, 0xA57, 0x526, 0x31D26, 0xD95, 0x70B55, 0x56A, 0x96D, 0x5095D, 0x4AD, 0xA4D, 0x41A4D, 0xD25, 0x81AA5, 0xB54, 0xB6A, 0x612DA, 0x95B, 0x49B, 0x41497, 0xA4B, 0xA164B, 0x6A5, 0x6D4, 0x615B4, 0xAB6, 0x957, 0x5092F, 0x497, 0x64B, 0x30D4A, 0xEA5, 0x80D65, 0x5AC, 0xAB6, 0x5126D, 0x92E, 0xC96, 0x41A95, 0xD4A, 0xDA5, 0x20B55, 0x56A, 0x7155B, 0x25D, 0x92D, 0x5192B, 0xA95, 0xB4A, 0x416AA, 0xAD5, 0x90AB5, 0x4BA, 0xA5B, 0x60A57, 0x52B, 0xA93, 0x40E95);
 madd[0] = 0;
@@ -66,15 +66,15 @@ function GetcDateString() {
     tmp += dzString.charAt((cYear - 4) % 12);
     tmp += "(";
     tmp += sx.charAt((cYear - 4) % 12);
-    tmp += ")Äê ";
+    tmp += ")å¹´ ";
     if (cMonth < 1) {
-        tmp += "(Èò)";
+        tmp += "(é—°)";
         tmp += monString.charAt(-cMonth - 1);
     } else {
         tmp += monString.charAt(cMonth - 1);
     }
-    tmp += "ÔÂ";
-    tmp += (cDay < 11) ? "³õ" : ((cDay < 20) ? "Ê®" : ((cDay < 30) ? "Ø¥" : "ÈıÊ®"));
+    tmp += "æœˆ";
+    tmp += (cDay < 11) ? "åˆ" : ((cDay < 20) ? "å" : ((cDay < 30) ? "å»¿" : "ä¸‰å"));
     if (cDay % 10 != 0 || cDay == 10) {
         tmp += numString.charAt((cDay - 1) % 10);
     }

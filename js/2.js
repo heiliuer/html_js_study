@@ -10,13 +10,13 @@ function GetCurrentDateTime() {
     var ms = d.getMilliseconds();
     var curDateTime = year;
     if (month > 9)
-        curDateTime = curDateTime + "Äê" + month;
+        curDateTime = curDateTime + "å¹´" + month;
     else
-        curDateTime = curDateTime + "Äê0" + month;
+        curDateTime = curDateTime + "å¹´0" + month;
     if (date > 9)
-        curDateTime = curDateTime + "ÔÂ" + date + "ÈÕ";
+        curDateTime = curDateTime + "æœˆ" + date + "æ—¥";
     else
-        curDateTime = curDateTime + "ÔÂ0" + date + "ÈÕ";
+        curDateTime = curDateTime + "æœˆ0" + date + "æ—¥";
     if (hours > 9)
         curDateTime = curDateTime + " " + hours;
     else
@@ -31,19 +31,19 @@ function GetCurrentDateTime() {
         curDateTime = curDateTime + ":0" + seconds;
     var weekday = "";
     if (week == 0)
-        weekday = "ĞÇÆÚÈÕ";
+        weekday = "æ˜ŸæœŸæ—¥";
     else if (week == 1)
-        weekday = "ĞÇÆÚÒ»";
+        weekday = "æ˜ŸæœŸä¸€";
     else if (week == 2)
-        weekday = "ĞÇÆÚ¶ş";
+        weekday = "æ˜ŸæœŸäºŒ";
     else if (week == 3)
-        weekday = "ĞÇÆÚÈı";
+        weekday = "æ˜ŸæœŸä¸‰";
     else if (week == 4)
-        weekday = "ĞÇÆÚËÄ";
+        weekday = "æ˜ŸæœŸå››";
     else if (week == 5)
-        weekday = "ĞÇÆÚÎå";
+        weekday = "æ˜ŸæœŸäº”";
     else if (week == 6)
-        weekday = "ĞÇÆÚÁù";
+        weekday = "æ˜ŸæœŸå…­";
     curDateTime = curDateTime + " " + weekday;
     return curDateTime;
 }

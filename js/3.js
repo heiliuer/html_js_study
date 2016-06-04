@@ -4,8 +4,8 @@ var fragmentStr="baidu.com";
 function go(){
 	var ky=document.getElementById("key");
 	if(ky.value.length==0){
-		ky.placeholder='ÊäÈëÎª¿Õ';
-		setTimeout(function(){ky.placeholder='ÇëÊäÈë¹Ø¼ü×Ö';},1000);
+		ky.placeholder='è¾“å…¥ä¸ºç©º';
+		setTimeout(function(){ky.placeholder='è¯·è¾“å…¥å…³é”®å­—';},1000);
 		return false;
 	}
 	else{
@@ -50,11 +50,11 @@ function go(){
 
 
 var allData={
- "ËÑË÷":{"name":["°Ù¶È","¹È¸è","360","ËÑ¹·","¹ÙÍø"],"u_val":["baidu.com","google.com","so.com","sogou.com","jianso.com"],"pic":["img/1.jpg","img/3.jpg","img/5.jpg","img/2.jpg","img/10.gif"]},
- "ÍøÅÌ":{"name":["°Ù¶È","»ªÎª","115","360"],"u_val":["pan.baidu.com","dbank.com","115.com","yunpan.360.cn"],"pic":["img/1.jpg","img/9.jpg","img/8.jpg","img/5.jpg"]},
- "Í¼Æ¬":{"name":["°Ù¶È","êÇÍ¼","ËÑ¹·"],"u_val":["image.baidu.com","nipic.com","sougouPic"],"pic":["img/1.jpg","img/6.jpg","img/2.jpg"]},
- "Î¢²©":{"name":["ĞÂÀË"],"u_val":["weibo.com"],"pic":["img/11.png"]},
- "Ìù°É":{"name":["°Ù¶È"],"u_val":["tieba.baidu.com"],"pic":["img/7.jpg"]}
+ "æœç´¢":{"name":["ç™¾åº¦","è°·æ­Œ","360","æœç‹—","å®˜ç½‘"],"u_val":["baidu.com","google.com","so.com","sogou.com","jianso.com"],"pic":["img/1.jpg","img/3.jpg","img/5.jpg","img/2.jpg","img/10.gif"]},
+ "ç½‘ç›˜":{"name":["ç™¾åº¦","åä¸º","115","360"],"u_val":["pan.baidu.com","dbank.com","115.com","yunpan.360.cn"],"pic":["img/1.jpg","img/9.jpg","img/8.jpg","img/5.jpg"]},
+ "å›¾ç‰‡":{"name":["ç™¾åº¦","æ˜µå›¾","æœç‹—"],"u_val":["image.baidu.com","nipic.com","sougouPic"],"pic":["img/1.jpg","img/6.jpg","img/2.jpg"]},
+ "å¾®åš":{"name":["æ–°æµª"],"u_val":["weibo.com"],"pic":["img/11.png"]},
+ "è´´å§":{"name":["ç™¾åº¦"],"u_val":["tieba.baidu.com"],"pic":["img/7.jpg"]}
 }
 function hideSuggestLater(){
 	setTimeout(hideSuggest,200);
