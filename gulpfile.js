@@ -64,7 +64,7 @@ gulp.task("images", function () {
     //optimizationLevel优化级别
     //interlaced 交错
     //progressive 先进的
-    return gulp.src(["src/**/*.png", "src/**/*.jpg", "src/**/*.bmp"])
+    return gulp.src(["src/**/*.png", "src/**/*.jpg", "src/**/*.bmp", "src/**/*.gif"])
         .pipe(imagemin({optimizationLevel: 5, progressive: true, interlaced: true}))
         .pipe(gulp.dest("dist"))
         .pipe(notify({message: "images task ok"}));
