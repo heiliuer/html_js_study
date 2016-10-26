@@ -18,13 +18,19 @@ var gulp = require('gulp'),
 
 gulp.task("default", function () {
     //默认任务 执行多个任务
-    gulp.start("htmls", 'styles', 'scripts', 'images'/*, "watch", "server"*/);
+    gulp.start("htmls", "others", 'styles', 'scripts', 'images'/*, "watch", "server"*/);
 });
 
 //压缩htmls
 gulp.task("htmls", function () {
     return gulp.src("src/**/*.html")
         .pipe(htmlmin({collapseWhitespace: true}))
+        .pipe(gulp.dest("dist"));
+});
+
+//复制其他文件
+gulp.task("others", function () {
+    return gulp.src(["src/**/*.json", "src/**/*.mp3"])
         .pipe(gulp.dest("dist"));
 });
 
