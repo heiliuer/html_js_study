@@ -1,0 +1,95 @@
+<!DOCTYPE html><!--    to moving elements in a straight line   --><html><head><meta charset="utf-8"><script type="text/javascript">function loadImage(image, colorRgb) {
+            var canvas = document.createElement("canvas");
+            document.getElementById("holder").appendChild(canvas);
+            canvas.setAttribute("id", "canvas");
+            var context = canvas.getContext("2d");
+            var width = image.width;
+            var height = image.height;
+            canvas.setAttribute("width", width);
+            canvas.setAttribute("height", height);
+            context.drawImage(image, 0, 0);
+            var dataL = context.getImageData(0, 0, width, height);
+            if (colorRgb && colorRgb.length == 3) {
+                for (var i = 0; i < dataL.data.length; i += 4) {
+                    dataL.data[i] = colorRgb[0];
+                    dataL.data[i + 1] = colorRgb[1];
+                    dataL.data[i + 2] = colorRgb[2];
+                }
+            }
+            context.putImageData(dataL, 0, 0);
+        }
+
+
+        var imgHandler = function () {
+            var mColorRgb = [];
+            var mImage = new Image();
+            return {
+                setColor: function (colorRgb) {
+                    mColorRgb = colorRgb;
+                    return this;
+                },
+                setImage: function (image) {
+                    mImage = image;
+                    return this;
+                },
+                load: function () {
+                    loadImage(mImage, mColorRgb);
+                },
+                color: mColorRgb
+            }
+        }();
+
+        function loadImageFromUrl(url, callback) {
+            var image = new Image();
+            image.src = url;
+            image.onload = function () {
+                callback(image);
+            }
+        }
+
+        function loadImageFromFile(file, callback) {
+            var image = new Image();
+            image.src = window.URL.createObjectURL(file);
+            image.onload = function () {
+                callback(image);
+            };
+        }
+
+        //        loadImageFromUrl("test.png", function (image) {
+        //            imgHandler.setImage(image).setColor([0, 150, 250]).load();
+        //        });
+
+        function filechange(fileDom) {
+            for (var i = 0; i < fileDom.files.length; i++) {
+                var file = fileDom.files[i];
+                loadImageFromFile(file, function (image) {
+                    imgHandler.setImage(image).load();
+                    fileDom.value = null;
+                })
+            }
+        }
+
+        var colorchange = function () {
+            var cololrRgb = [0, 0, 0];
+            return function (index, val) {
+                cololrRgb[index] = val;
+                imgHandler.setColor(cololrRgb);
+                var colorPreview = document.getElementById("colorPreview");
+                colorPreview.style.backgroundColor = "rgb(" + cololrRgb.join(",") + ")";
+            }
+        }();
+
+        function save() {
+            var myCanvas = document.getElementById("canvas");
+            // here is the most important part because if you dont replace you will get a DOM 18 exception.
+            // var image = myCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream;Content-Disposition: attachment;filename=foobar.png");
+            var image = myCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+            window.location.href = image; // it will save locally
+        }
+
+        function refreshColor(){
+            var nums = document.querySelectorAll("input[type=number]");
+            for (var i=0;i<nums.length;i++){
+                colorchange(i,nums[i].value);
+            }
+        }</script></head><body><div>R<input type="number" min="0" max="255" value="0" onblur="colorchange(0,this.value)"> G<input type="number" min="0" max="255" value="150" onblur="colorchange(1,this.value)"> B<input type="number" min="0" max="255" value="250" onblur="colorchange(2,this.value)"> <span style="width: 20px;height: 20px;display: inline-block;color:#ccc" id="colorPreview" onclick="refreshColor()">色</span> <input type="file" accept="image/png" multiple="multiple" onchange="filechange(this)"></div><div id="holder"></div><!--<button onclick="save();">保存</button>--></body></html>
