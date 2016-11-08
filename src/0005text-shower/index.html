@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>text-shower</title>
+</head>
+<body>
+<div id="app">
+
+</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+    var $holder = $("#app")
+    var text = "你好你是你好你               是你好你是你好你\n是你好你是你好你是你好你是你好你是你好你是你好你是你好你是你好你是你好你是你好你是你好你是你好你是你好你是你好你是你好你是"
+    var index = 0
+    var nextChar = function () {
+        var char = text.charAt(index)
+        var fchar = filterChar(char);
+        $("<span>").hide().html(fchar).appendTo($holder).fadeIn()
+        index++
+        if (char == fchar) {
+            setTimeout(nextChar, 100);
+        } else {
+            nextChar()
+        }
+    }
+    var filterChar = function (char) {
+        if (char == " ") {
+            return "&nbsp;"
+        } else if (char == "\n") {
+            return "<br/>"
+        }
+        return char;
+    }
+    nextChar()
+</script>
+</html>
