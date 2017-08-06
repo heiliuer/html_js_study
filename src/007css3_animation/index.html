@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>007css3_animation</title>
+    <style>
+        .am-box {
+            transition: all 1s ease 0.1s;
+            left: 0;
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+        }
+
+        .move-right {
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="am-box">
+
+</div>
+<button onclick="moveRight()">动画</button>
+
+</body>
+<script>
+    function moveRight() {
+        document.getElementsByClassName('am-box')[0].classList.toggle('move-right')
+    }
+</script>
+</html>
