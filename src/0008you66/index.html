@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>0008you66</title>
+    <style>
+    </style>
+
+</head>
+<body>
+<div class="am-box">
+
+</div>
+
+<div id="editor"></div>
+
+</body>
+<script src="lib/hammer.min.js"></script>
+<script src="lib/jquery.min.js"></script>
+<script src="image-editor/src/ImageEditor.js"></script>
+<script>
+    var options = {
+            imageUrls: [
+                {url: 'images/test1.jpg', closeButtonRequire: false},
+                {
+                    url: 'images/test1.jpg',
+                    closeButtonRequire: false,
+                    clickToSelect: false,
+                    onClick: function () {
+                        editor.selectImage(0);
+                    }
+                },
+                'images/test1.jpg'
+            ],
+            width: 300,
+            height: 300,
+            onInitCompleted: function () {
+                editor.selectImage(0); // select most bottom image as current operating image
+            }
+        },
+        editor = $('#editor').ImageEditor(options); // init a DIV as ImageEditor
+</script>
+</html>
