@@ -20,5 +20,24 @@
     "gulp-uglify": "^1.5.4",
     "jshint": "^2.9.2",
     "yargs": "^4.7.1"
+  },
+  "description": "[预览效果](http://heiliuer.github.io/html_js_study)\r ---\r #### 压缩代码\r ` gulp `\r #### gh-pages 目录\r [dist/](/dist)",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heiliuer/html_js_study.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heiliuer/html_js_study/issues"
+  },
+  "homepage": "https://github.com/heiliuer/html_js_study#readme",
+  "dependencies": {
+    "ramda": "^0.26.1",
+    "ramda-fantasy": "^0.8.0"
   }
 }
