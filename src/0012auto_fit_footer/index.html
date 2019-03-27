@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绝对底部(保持footer在页面最底部)</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+</head>
+<body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        height: 100vh;
+    }
+    #wrap {
+        min-height: 100%;
+    }
+    #footer {
+        height: 150px;
+        margin-top: -150px;
+        background-color: #f00;
+    }
+</style>
+
+<div id="wrap">
+    <div id="main">
+        <div id="app" style="padding: 40px;">
+            <button @click="toggle">切换数据长度 {{length}}</button>
+            <ul>
+                <li v-for="i in length">数据</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="footer">底部</div> <!--底部和外层同级-->
+</body>
+<script>
+    const lenArr = [20, 400]
+    new Vue({
+        el: '#app',
+        data: {
+            length: lenArr[0]
+        },
+        methods: {
+            toggle() {
+                this.length = this.length === lenArr[0] ? lenArr[1] : lenArr[0]
+            }
+        }
+    })
+</script>
+</html>

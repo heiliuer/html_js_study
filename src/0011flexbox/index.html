@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            display: flex;
+            /*主轴方向 row(水平) column(垂直)*/
+            flex-direction: row;
+        }
+
+        .box-item {
+            width: 100px;
+            height: 100px;
+        }
+
+        .box-item:nth-last-of-type(2n) {
+            background-color: red;
+        }
+
+        .box-item:nth-last-of-type(2n+1) {
+            background-color: blue;
+        }
+
+        .box-wrap {
+            display: flex;
+            /*默认nowrap一直主轴一条线排下去(不够排，压缩子元素的宽度或者高度)，此属性规定排不下去怎么办*/
+            flex-wrap: wrap; /*wrap wrap-reverse*/ /*wrap-reverse 讲cross轴线反过来第二行在上方*/
+            width: 350px;
+            height: 220px;
+            background-color: yellow;
+            /*flex-flow 是flex-wrap和flex-direction的复合属性*/
+            /*在主轴上的对齐方式 flex-start | flex-end | center | space-between 中间间隔 | space-around 中间和两边都间隔 */
+            justify-content: space-between;
+            /*在项目交叉轴对齐方式 flex-start | flex-end | center | baseline | stretch*/
+            align-items: center;
+            /*多根轴线对齐方式 flex-start | flex-end | center | space-between | space-around | stretch*/
+            align-content: center;
+        }
+
+        .box-item3 {
+            width: 50px;
+            height: 50px;
+            /*值越小越靠前*/
+            order: -1;
+            /*放大比例，默认0（即时有空间也不放大）*/
+            flex-grow: 0;
+            /*缩小比例，默认为1，空间不够项目缩小比例*/
+            flex-shrink: 0;
+            /*占据的主轴空间*/
+            flex-basis: auto;
+            /*flex flex-grow flex-shrink flex-basis 复合属性 */
+            /*当个项目覆盖align-items属性*/
+            align-self: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <!-- flex子元素 float vertical-align clear都无效 -->
+    <div class="box-item">item1</div>
+    <div class="box-item">item2</div>
+    <div class="box-item">item3</div>
+    <div class="box-item">item4</div>
+    <div class="box-item">item5</div>
+    <div class="box-item">item6</div>
+</div>
+<div class="box-wrap">
+    <!-- flex子元素 float vertical-align clear都无效 -->
+    <div class="box-item box-item1">item1</div>
+    <div class="box-item box-item2">item2</div>
+    <div class="box-item box-item3">item3</div>
+    <div class="box-item box-item4">item4</div>
+    <div class="box-item box-item5">item5</div>
+    <div class="box-item box-item6">item6</div>
+</div>
+</body>
+</html>
